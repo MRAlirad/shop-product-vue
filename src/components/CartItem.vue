@@ -22,8 +22,8 @@
 			<Button
 				text="Remove"
 				type="red"
+				@on-click="remove"
 			/>
-			<!-- <button @click="remove">Remove</button> -->
 		</div>
 	</div>
 </template>
@@ -36,9 +36,15 @@
 			Button,
 		},
 		props: ['prodId', 'title', 'image', 'price', 'qty'],
+		inject: ['removeProductFromCart'],
 		computed: {
 			itemTotal() {
 				return (this.price * this.qty).toFixed(2);
+			},
+		},
+		methods: {
+			remove() {
+				this.removeProductFromCart(this.prodId);
 			},
 		},
 	};
