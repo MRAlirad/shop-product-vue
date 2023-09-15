@@ -53,6 +53,20 @@
 			};
 		},
 		methods: {
+			addProductToCart(productData) {
+				const productInCartIndex = this.cart.items.findIndex(ci => ci.productId === productData.id);
+				if (productInCartIndex >= 0) this.cart.items[productInCartIndex].qty++;
+				else
+					this.cart.items.push({
+						productId: productData.id,
+						title: productData.title,
+						image: productData.image,
+						price: productData.price,
+						qty: 1,
+					});
+				this.cart.qty++;
+				this.cart.total += productData.price;
+			},
 			login() {
 				this.isLoggedIn = true;
 			},

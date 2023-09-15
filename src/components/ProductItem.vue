@@ -14,8 +14,10 @@
 			</div>
 		</div>
 		<div class="product__actions">
-			<Button text="Add to Cart" />
-			<!-- <button @click="addToCart">Add to Cart</button> -->
+			<Button
+				text="Add to Cart"
+				@on-click="addToCart"
+			/>
 		</div>
 	</div>
 </template>
@@ -29,7 +31,19 @@
 			Button,
 			Badge,
 		},
+		inject: ['addProductToCart'],
+
 		props: ['id', 'image', 'title', 'price', 'description'],
+		methods: {
+			addToCart() {
+				this.addProductToCart({
+					id: this.id,
+					image: this.image,
+					title: this.title,
+					price: this.price,
+				});
+			},
+		},
 	};
 </script>
 
