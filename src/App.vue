@@ -14,7 +14,7 @@
 		},
 		data() {
 			return {
-				isLoggedIn: false,
+				isLoggedIn: true,
 				products: [
 					{
 						id: 'p1',
