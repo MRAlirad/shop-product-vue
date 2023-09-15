@@ -10,7 +10,7 @@
 		</h3>
 		<div class="user-cart-container">
 			<CartItem
-				v-for="{productId, title, image, price, qty} in cart.items"
+				v-for="{productId, title, image, price, qty} in cartItems"
 				:key="productId"
 				:prodId="productId"
 				:title="title"
@@ -27,15 +27,17 @@
 	import CartItem from '../components/CartItem.vue';
 
 	export default {
-		inject: ['cart'],
 		components: {
 			Badge,
 			CartItem,
 		},
 		computed: {
 			cartTotal() {
-				return this.cart.total.toFixed(2);
+				return this.$store.getters['cart/totalSum'];
 			},
+			cartItems(){
+				return this.$store.getters['cart/products']
+			}
 		},
 	};
 </script>

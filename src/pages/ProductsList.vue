@@ -19,7 +19,11 @@
 		components: {
 			ProductItem,
 		},
-		inject: ['products'],
+		computed: {
+			products(){
+				return this.$store.getters['prods/products'];
+			}
+		}
 	};
 </script>
 

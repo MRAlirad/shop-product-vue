@@ -12,7 +12,7 @@
 					<router-link to="/cart">Cart</router-link>
 					<Badge
 						mode="elegant"
-						:text="cart.qty"
+						:text="cartQuantity"
 					/>
 				</li>
 				<li v-if="isLoggedIn">
@@ -46,7 +46,11 @@
 			Button,
 			Badge,
 		},
-		inject: ['isLoggedIn', 'login', 'logout', 'cart'],
+		computed: {
+			cartQuantity(){
+				return this.$store.getters['cart/quantity']
+			}
+		}
 	};
 </script>
 
