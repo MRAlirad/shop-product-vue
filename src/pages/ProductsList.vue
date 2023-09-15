@@ -1,19 +1,20 @@
 <template>
 	<section class="products-list">
 		<ProductItem
-			v-for="prod in products"
-			:key="prod.id"
-			:id="prod.id"
-			:title="prod.title"
-			:image="prod.image"
-			:description="prod.description"
-			:price="prod.price"
+			v-for="{ id, title, image, description, price } in products"
+			:key="id"
+			:id="id"
+			:title="title"
+			:image="image"
+			:description="description"
+			:price="price"
 		/>
 	</section>
 </template>
 
 <script>
 	import ProductItem from '../components/ProductItem.vue';
+
 	export default {
 		components: {
 			ProductItem,
@@ -30,6 +31,6 @@
 		justify-content: center;
 		gap: 1.5rem;
 		max-width: 40rem;
-        margin: 0 auto;
+		margin: 0 auto;
 	}
 </style>

@@ -71,6 +71,9 @@
 
 	li {
 		margin: 0 1rem;
+		display: flex;
+		align-items: start;
+		gap: 10px;
 	}
 
 	a {

@@ -9,9 +9,7 @@
 			</div>
 			<div class="product__text">
 				<h3>{{ title }}</h3>
-				<Badge
-					:text="price"
-				/>
+				<Badge :text="price" />
 				<p>{{ description }}</p>
 			</div>
 		</div>

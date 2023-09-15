@@ -13,8 +13,8 @@
 			text: String | Number,
 			mode: {
 				type: String,
-				default: 'highlight'
-			}
+				default: 'highlight',
+			},
 		},
 	};
 </script>
