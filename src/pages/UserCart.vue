@@ -10,13 +10,13 @@
 		</h3>
 		<div class="user-cart-container">
 			<CartItem
-				v-for="item in cart.items"
-				:key="item.productId"
-				:prod-id="item.productId"
-				:title="item.title"
-				:image="item.image"
-				:price="item.price"
-				:qty="item.qty"
+				v-for="{productId, title, image, price, qty} in cart.items"
+				:key="productId"
+				:prodId="productId"
+				:title="title"
+				:image="image"
+				:price="price"
+				:qty="qty"
 			/>
 		</div>
 	</section>
