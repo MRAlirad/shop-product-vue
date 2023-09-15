@@ -4,20 +4,33 @@
 		<h3>
 			Total Amount:
 			<Badge
-				:text="cartTotal"
+				:text="`$ ${cartTotal}`"
 				mode="elegant"
 			/>
 		</h3>
+		<div class="user-cart-container">
+			<CartItem
+				v-for="item in cart.items"
+				:key="item.productId"
+				:prod-id="item.productId"
+				:title="item.title"
+				:image="item.image"
+				:price="item.price"
+				:qty="item.qty"
+			/>
+		</div>
 	</section>
 </template>
 
 <script>
 	import Badge from '../components/Badge.vue';
+	import CartItem from '../components/CartItem.vue';
 
 	export default {
 		inject: ['cart'],
 		components: {
 			Badge,
+			CartItem,
 		},
 		computed: {
 			cartTotal() {
@@ -34,8 +47,7 @@
 		align-items: center;
 		justify-content: center;
 		gap: 1.5rem;
-		max-width: 40rem;
-		margin: 0 auto;
+		padding: 0 20% 50px;
 	}
 	h2 {
 		color: #292929;
@@ -47,5 +59,14 @@
 
 	h3 {
 		text-align: center;
+	}
+
+	.user-cart-container {
+		display: flex;
+		flex-direction: column;
+		gap: 1.5rem;
+		width: 100%;
+		padding: 0 10%;
+		align-items: center;
 	}
 </style>

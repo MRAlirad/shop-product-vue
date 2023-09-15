@@ -27,6 +27,7 @@
 		cursor: pointer;
 		padding: 0.5rem 1.5rem;
 		border-radius: 30px;
+		width: max-content;
 	}
 
 	button.secondary {
@@ -50,5 +51,17 @@
 	button.primary:active {
 		background-color: #760ab4;
 		border-color: #760ab4;
+	}
+
+	button.red {
+		border: 1px solid #8f0030;
+		background-color: #8f0030;
+		color: white;
+	}
+
+	button.red:hover,
+	button.red:active {
+		background-color: #53001c;
+		border-color: #53001c;
 	}
 </style>
