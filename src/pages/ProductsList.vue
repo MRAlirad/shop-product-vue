@@ -1,5 +1,5 @@
 <template>
-	<section class="products-list">
+	<section class="products-list-section">
 		<ProductItem
 			v-for="{ id, title, image, description, price } in products"
 			:key="id"
@@ -24,7 +24,7 @@
 </script>
 
 <style scoped>
-	.products-list {
+	.products-list-section {
 		display: flex;
 		flex-direction: column;
 		align-items: center;

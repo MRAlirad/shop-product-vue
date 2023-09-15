@@ -1,7 +1,7 @@
 import {createRouter, createWebHistory} from 'vue-router';
 
 import ProductsList from './pages/ProductsList.vue';
-// import UserCart from './pages/UserCart.vue';
+import UserCart from './pages/UserCart.vue';
 // import ShopAdmin from './pages/ShopAdmin.vue';
 
 const router = createRouter({
@@ -9,7 +9,7 @@ const router = createRouter({
     routes: [
         {path: '/', redirect: '/products'},
         {path: '/products', component: ProductsList},
-        // {path: '/cart', component: UserCart},
+        {path: '/cart', component: UserCart},
         // {path: '/admin', component: ShopAdmin},
     ]
 });
