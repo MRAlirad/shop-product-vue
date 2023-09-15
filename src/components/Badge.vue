@@ -1,15 +1,21 @@
 <template>
 	<span
 		class="badge"
-		:class="['badge--' + mode, { nml: noMarginLeft }]"
+		:class="['badge--' + mode]"
 	>
-	{{ text }}
+		{{ text }}
 	</span>
 </template>
 
 <script>
 	export default {
-		props: ['text','mode', 'noMarginLeft'],
+		props: {
+			text: String | Number,
+			mode: {
+				type: String,
+				default: 'highlight'
+			}
+		},
 	};
 </script>
 
@@ -19,17 +25,14 @@
 		padding: 0.15rem 1.25rem;
 		background-color: #ccc;
 		color: #292929;
-		margin: 0 0.75rem;
 		border-radius: 30px;
-	}
-
-	.nml {
-		margin-left: 0;
+		width: max-content;
 	}
 
 	.badge--highlight {
 		background-color: #f0b800;
 		color: black;
+		font-weight: bold;
 	}
 
 	.badge--elegant {

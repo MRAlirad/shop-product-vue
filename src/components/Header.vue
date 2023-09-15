@@ -25,11 +25,13 @@
 				v-if="!isLoggedIn"
 				@on-click="login"
 				text="Login"
+				type="secondary"
 			/>
 			<Button
 				v-if="isLoggedIn"
 				@on-click="logout"
 				text="Logout"
+				type="secondary"
 			/>
 		</div>
 	</header>
